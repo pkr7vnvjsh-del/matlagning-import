@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <title>Öppnar Matlagning…</title>
+
+  <script>
+    const params = window.location.search;
+    const appURL = "matlagning://import" + params;
+
+    // Försök öppna appen
+    window.location = appURL;
+
+    // Fallback om appen inte finns
+    setTimeout(() => {
+      document.body.innerHTML =
+        "<p>Appen är inte installerad.</p>";
+    }, 800);
+  </script>
+
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #111;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <p>Öppnar appen…</p>
+</body>
+</html>
