@@ -8,14 +8,17 @@
     const params = window.location.search;
     const appURL = "matlagning://import" + params;
 
-    // Försök öppna appen
-    window.location.href = appURL;
+    // iOS-safe deep link trigger
+    const iframe = document.createElement("iframe");
+    iframe.style.display = "none";
+    iframe.src = appURL;
+    document.body.appendChild(iframe);
 
-    // Fallback om appen inte finns
+    // fallback om appen inte finns
     setTimeout(() => {
       document.body.innerHTML =
         "<p>Appen är inte installerad.</p>";
-    }, 800);
+    }, 1200);
   </script>
 
   <style>
@@ -36,3 +39,4 @@
   <p>Öppnar appen…</p>
 </body>
 </html>
+
