@@ -1,78 +1,49 @@
 <!doctype html>
 <html lang="sv">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
 
-  <!-- Titel som visas i iMessage -->
-  <meta property="og:title" content="Mina Recept" />
-
-  <!-- Texten under titeln i SMS -->
-  <meta property="og:description" content="Öppna receptet i appen Mina Recept" />
-
-  <!-- Viktigt: INGEN og:image -->
-  <!-- iMessage blir då ett rent länkkort -->
-
-  <!-- URL -->
-  <meta property="og:url" content="https://pkr7nvjsh-del.github.io/" />
-  <meta property="og:type" content="website" />
-
-  <!-- Gör bakgrunden ljus -->
-  <meta name="theme-color" content="#22c55e" />
-
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+  <!-- VIKTIGT för iMessage -->
   <title>Mina Recept</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #0f172a;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-    }
+  <!-- Open Graph: text ja, bild nej -->
+  <meta property="og:title" content="Mina Recept">
+  <meta property="og:description" content="Öppna receptet i appen Mina Recept">
+  <meta property="og:type" content="website">
+  <!-- INGEN og:image -->
 
-    .card {
-      background: #16a34a;
-      padding: 28px 32px;
-      border-radius: 18px;
-      text-align: center;
-      box-shadow: 0 20px 40px rgba(0,0,0,.35);
-    }
-
-    h1 {
-      margin: 0 0 10px;
-      font-size: 28px;
-    }
-
-    p {
-      margin: 0 0 18px;
-      opacity: .9;
-    }
-
-    a {
-      display: inline-block;
-      background: white;
-      color: #166534;
-      padding: 12px 18px;
-      border-radius: 12px;
-      font-weight: 600;
-      text-decoration: none;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body>
-  <div class="card">
-    <h1>Mina Recept</h1>
-    <p>Tryck för att öppna receptet i appen</p>
-  <a href="matlagning://new">Skapa nytt recept</a>
-  </div>
+<body style="
+  margin:0;
+  font-family:-apple-system, BlinkMacSystemFont, sans-serif;
+  background:#1c1c1e;
+  color:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+">
+
+  <!-- TEXT SOM iMESSAGE LÄSER -->
+  <a href="matlagning://new"
+     style="
+       display:inline-block;
+       padding:14px 22px;
+       background:#34c759;
+       color:white;
+       text-decoration:none;
+       border-radius:10px;
+       font-size:17px;
+       font-weight:600;
+     ">
+    Öppna i Mina Recept
+  </a>
+
 </body>
 </html>
+
 
 
 
