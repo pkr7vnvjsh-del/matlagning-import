@@ -3,44 +3,61 @@
 <head>
   <meta charset="utf-8">
 
-  <!-- VIKTIGT för iMessage -->
+  <!-- iMessage läser detta -->
   <title>Mina Recept</title>
-
-  <!-- Open Graph: text ja, bild nej -->
   <meta property="og:title" content="Mina Recept">
   <meta property="og:description" content="Öppna receptet i appen Mina Recept">
   <meta property="og:type" content="website">
   <!-- INGEN og:image -->
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #111;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+
+    .button {
+      background: #22c55e;
+      color: black;
+      border: none;
+      padding: 14px 22px;
+      font-size: 17px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-block;
+      margin-top: 12px;
+    }
+  </style>
 </head>
 
-<body style="
-  margin:0;
-  font-family:-apple-system, BlinkMacSystemFont, sans-serif;
-  background:#1c1c1e;
-  color:white;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  height:100vh;
-">
+<body>
+  <div>
+    <p>Tryck för att öppna receptet i appen</p>
 
-  <!-- TEXT SOM iMESSAGE LÄSER -->
-  <a href="matlagning://new"
-     style="
-       display:inline-block;
-       padding:14px 22px;
-       background:#34c759;
-       color:white;
-       text-decoration:none;
-       border-radius:10px;
-       font-size:17px;
-       font-weight:600;
-     ">
-    Öppna i Mina Recept
-  </a>
+    <!-- Fallback om JS är av -->
+    <a id="fallback" class="button" href="matlagning://import">
+      Öppna i Mina Recept
+    </a>
+  </div>
 
+  <script>
+    // Safari → redirect med params
+    const params = window.location.search || "";
+    const appURL = "matlagning://import" + params;
+
+    // Direkt redirect (utan klick)
+    window.location.replace(appURL);
+  </script>
 </body>
 </html>
 
