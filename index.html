@@ -2,49 +2,46 @@
 <html lang="sv">
 <head>
   <meta charset="utf-8">
-  <title>Öppna Matlagning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #111;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-      text-align: center;
-    }
+  <!-- 🟢 iMessage preview -->
+  <title>Mina Recept</title>
 
-    button {
-      background: #22c55e;
-      color: black;
-      border: none;
-      padding: 14px 22px;
-      font-size: 17px;
-      border-radius: 12px;
-      cursor: pointer;
-    }
-  </style>
+  <meta property="og:title" content="Mina Recept">
+  <meta property="og:description" content="Tryck för att öppna receptet i appen Mina Recept">
+  <meta property="og:type" content="website">
+
+  <!-- ❌ Viktigt: ingen og:image -->
+  <!-- ingen og:image = ingen bild i iMessage -->
+
+  <!-- 🔁 Öppna appen direkt -->
+  <script>
+    window.location.href = "matlagning://import";
+  </script>
+
+  <!-- Fallback om app inte öppnas -->
+  <noscript>
+    <meta http-equiv="refresh" content="0; url=https://pkr7vnvjsh-del.github.io">
+  </noscript>
 </head>
 
-<body>
-  <div>
-    <p>Tryck för att öppna receptet i appen</p>
-    <button id="open">Öppna i Matlagning</button>
+<body style="margin:0; background:#0f0f0f; color:white; font-family:-apple-system, system-ui;">
+  <div style="
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:24px;
+  ">
+    <div>
+      <h1 style="margin-bottom:12px;">Mina Recept</h1>
+      <p>Tryck för att öppna receptet i appen</p>
+    </div>
   </div>
-
-  <script>
-    const params = window.location.search;
-    const appURL = "matlagning://import" + params;
-
-    document.getElementById("open").onclick = () => {
-      window.location.href = appURL;
-    };
-  </script>
 </body>
 </html>
+
 
 
 
