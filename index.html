@@ -3,12 +3,11 @@
 <head>
   <meta charset="utf-8">
 
-  <!-- iMessage läser detta -->
+  <!-- iMessage preview -->
   <title>Mina Recept</title>
   <meta property="og:title" content="Mina Recept">
   <meta property="og:description" content="Öppna receptet i appen Mina Recept">
   <meta property="og:type" content="website">
-  <!-- INGEN og:image -->
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -44,19 +43,16 @@
   <div>
     <p>Tryck för att öppna receptet i appen</p>
 
-    <!-- Fallback om JS är av -->
-    <a id="fallback" class="button" href="matlagning://import">
+    <a id="open" class="button">
       Öppna i Mina Recept
     </a>
   </div>
 
   <script>
-    // Safari → redirect med params
     const params = window.location.search || "";
     const appURL = "matlagning://import" + params;
 
-    // Direkt redirect (utan klick)
-    window.location.replace(appURL);
+    document.getElementById("open").href = appURL;
   </script>
 </body>
 </html>
